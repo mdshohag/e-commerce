@@ -35,7 +35,7 @@
 		$rana_r1 = $maisha_q1->fetch_array();
 		
 		$t_qty = $rana_r1[0];		
-		list($total_cart_item) = split('[/.]', $t_qty);
+		list($total_cart_item) = explode('[/.]', $t_qty);
 		$total_cart_item;
 	}
 ?>
