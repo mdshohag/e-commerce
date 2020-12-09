@@ -1,0 +1,21 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^post_url/(.*)$ post_url/$1.php [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+
+RewriteRule ^single-product/book_id/(.*)$ single-product.php?book_id=$1 [L,QSA]
+RewriteRule ^categories/root_cat/(.*)cat/(.*)$ categories.php?root_cat=$1&&cat=$2 [L,QSA]
+RewriteRule ^shipping/confirm_id/(.*)$ shipping.php?confirm_id=$1 [L,QSA]
+RewriteRule ^myorder/oi/(.*)$ myorder.php?oi=$1 [L,QSA]
+RewriteRule ^myaccount/oi/(.*)$ myaccount.php?oi=$1 [L,QSA]
+RewriteRule ^search_item/searchItem/(.*)cat/(.*)$ search_item.php?searchItem=$1 [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^/.*]+)$ $1.php
+
+Options All -Indexes
+ErrorDocument 403  http://localhost/e-commerce/customer/
+ErrorDocument 404  http://localhost/e-commerce/customer/

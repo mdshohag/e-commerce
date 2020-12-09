@@ -1,0 +1,26 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^post_url/(.*)$ post_url/$1.php [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+
+
+RewriteRule ^orderdetails/orderid/(.*)$ orderdetails.php?orderid=$1 [L,QSA]
+RewriteRule ^rootcategory_edit/edit/(.*)$ rootcategory_edit.php?edit=$1 [L,QSA]
+RewriteRule ^category_edit/edit/(.*)$ category_edit.php?edit=$1 [L,QSA]
+RewriteRule ^subcategory_edit/edit/(.*)$ subcategory_edit.php?edit=$1 [L,QSA]
+RewriteRule ^product_type_edit/id/(.*)$ product_type_edit.php?id=$1 [L,QSA]
+RewriteRule ^product_edit/edit/(.*)$ product_edit.php?edit=$1 [L,QSA]
+RewriteRule ^country_edit/id/(.*)$ country_edit.php?id=$1 [L,QSA]
+RewriteRule ^district_edit/id/(.*)$ district_edit.php?id=$1 [L,QSA]
+RewriteRule ^thana_edit/id/(.*)$ thana_edit.php?id=$1 [L,QSA]
+RewriteRule ^multi_photo/edit/(.*)$ multi_photo.php?edit=$1 [L,QSA]
+RewriteRule ^multi_photo_edit/img_edit/(.*)$ multi_photo_edit.php?img_edit=$1 [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^/.*]+)$ $1.php
+
+Options All -Indexes
+ErrorDocument 403  http://localhost/e-commerce/apanel/
+ErrorDocument 404  http://localhost/e-commerce/apanel/
